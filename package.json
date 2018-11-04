@@ -34,7 +34,7 @@
     "ethereumjs-block": "1.2.2",
     "ethereumjs-tx": "1.3.4",
     "ethereumjs-util": "^5.2.0",
-    "ethereumjs-vm": "https://github.com/Agusx1211/ethereumjs-vm/releases/download/2.4.1/ethereumjs-vm-coverage-2-4-3.tar.gz",
+    "ethereumjs-vm": "https://github.com/Agusx1211/ethereumjs-vm/releases/download/2.4.1/ethereumjs-vm-2.4.4-coverage.tar.gz",
     "heap": "0.2.6",
     "level-sublevel": "6.6.4",
     "levelup": "3.1.1",
