@@ -1,13 +1,13 @@
 [![npm](https://img.shields.io/npm/v/ganache-core.svg)]()
 [![npm](https://img.shields.io/npm/dm/ganache-core.svg)]()
 [![Build Status](https://travis-ci.org/trufflesuite/ganache-core.svg?branch=master)](https://travis-ci.org/trufflesuite/ganache-core)
-# Ganache Core
+# Macaron Core
 
-This is the core code that powers the Ganache application and the the Ganache command line tool.
+This is the core code that powers the Macaron application and the the Macaron command line tool.
 
 # INSTALL
 
-`ganache-core` is written in Javascript and distributed as a Node package via `npm`. Make sure you have Node.js (>= v8.9.0) installed, and your environment is capable of installing and compiling `npm` modules.
+`macaron-core` is written in Javascript and distributed as a Node package via `npm`. Make sure you have Node.js (>= v8.9.0) installed, and your environment is capable of installing and compiling `npm` modules.
 
 **macOS** Make sure you have the XCode Command Line Tools installed. These are needed in general to be able to compile most C based languages on your machine, as well as many npm modules.
 
@@ -17,7 +17,7 @@ This is the core code that powers the Ganache application and the the Ganache co
 
 
 ```Bash
-npm install ganache-core
+npm install macaron-core
 ```
 
 # USAGE
@@ -25,19 +25,19 @@ npm install ganache-core
 As a Web3 provider:
 
 ```javascript
-var Ganache = require("ganache-core");
-web3.setProvider(Ganache.provider());
+var Macaron = require("macaron-core");
+web3.setProvider(Macaron.provider());
 ```
 
 As a general http server:
 
 ```javascript
-var Ganache = require("ganache-core");
-var server = Ganache.server();
+var Macaron = require("macaron-core");
+var server = Macaron.server();
 server.listen(port, function(err, blockchain) {...});
 ```
 
-Both `.provider()` and `.server()` take a single object which allows you to specify behavior of the Ganache instance. This parameter is optional. Available options are:
+Both `.provider()` and `.server()` take a single object which allows you to specify behavior of the macaron instance. This parameter is optional. Available options are:
 
 * `"accounts"`: `Array` of `Object`'s. Each object should have a balance key with a hexadecimal value. The key `secretKey` can also be specified, which represents the account's private key. If no `secretKey`, the address is auto-generated with the given balance. If specified, the key is used to determine the account's address.
 * `"debug"`: `boolean` - Output VM opcodes for debugging
@@ -56,10 +56,10 @@ Both `.provider()` and `.server()` take a single object which allows you to spec
 * `"db_path"`: `String` - Specify a path to a directory to save the chain database. If a database already exists, that chain will be initialized instead of creating a new one.
 * `"db"`: `Object` - Specify an alternative database instance, for instance [MemDOWN](https://github.com/level/memdown).
 * `"ws"`: Enable a websocket server. This is `true` by default.
-* `"vmErrorsOnRPCResponse"`: Whether to report runtime errors from EVM code as RPC errors. This is `true` by default to replicate the error reporting behavior of previous versions of ganache.
+* `"vmErrorsOnRPCResponse"`: Whether to report runtime errors from EVM code as RPC errors. This is `true` by default to replicate the error reporting behavior of previous versions of macaron.
 * `"hdPath"`: The hierarchical deterministic path to use when generating accounts. Default: "m/44'/60'/0'/0/"
-* `"allowUnlimitedContractSize"`: Allows unlimited contract sizes while debugging. By setting this to `true`, the check within the EVM for contract size limit of 24KB (see [EIP-170](https://git.io/vxZkK)) is bypassed. Setting this to `true` **will** cause `ganache-core` to behave differently than production environments. (default: `false`; **ONLY** set to `true` during debugging).
-* `"emitFreeLogs"`: This emitFreeLogs option allows instantiating an EVM instance without this limitation, enabling any contract to emit an unlimited quantity of events without modifying the block gas limit, and also to emit events during STATICCALLS. https://github.com/ethereumjs/ethereumjs-vm/pull/378). Setting this to `true` **will** cause `ganache-core` to behave differently than production environments. (default: `false`; **ONLY** set to `true` during debugging).
+* `"allowUnlimitedContractSize"`: Allows unlimited contract sizes while debugging. By setting this to `true`, the check within the EVM for contract size limit of 24KB (see [EIP-170](https://git.io/vxZkK)) is bypassed. Setting this to `true` **will** cause `macaron-core` to behave differently than production environments. (default: `false`; **ONLY** set to `true` during debugging).
+* `"emitFreeLogs"`: This emitFreeLogs option allows instantiating an EVM instance without this limitation, enabling any contract to emit an unlimited quantity of events without modifying the block gas limit, and also to emit events during STATICCALLS. https://github.com/ethereumjs/ethereumjs-vm/pull/378). Setting this to `true` **will** cause `macaron-core` to behave differently than production environments. (default: `false`; **ONLY** set to `true` during debugging).
 * `"gasPrice"`: Sets the default gas price for transactions if not otherwise specified. Must be specified as a hex string in wei. Defaults to `"0x77359400"`, or 2 gwei.
 * `"gasLimit"`: Sets the block gas limit. Must be specified as a hex string. Defaults to `"0x6691b7"`.
 * `"keepAliveTimeout"`: If using `.server()` - Sets the HTTP server's `keepAliveTimeout` in milliseconds. See the [NodeJS HTTP docs](https://nodejs.org/api/http.html#http_server_keepalivetimeout) for details. `5000` by default.
