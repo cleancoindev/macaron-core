@@ -63,6 +63,8 @@ Both `.provider()` and `.server()` take a single object which allows you to spec
 * `"gasPrice"`: Sets the default gas price for transactions if not otherwise specified. Must be specified as a hex string in wei. Defaults to `"0x77359400"`, or 2 gwei.
 * `"gasLimit"`: Sets the block gas limit. Must be specified as a hex string. Defaults to `"0x6691b7"`.
 * `"keepAliveTimeout"`: If using `.server()` - Sets the HTTP server's `keepAliveTimeout` in milliseconds. See the [NodeJS HTTP docs](https://nodejs.org/api/http.html#http_server_keepalivetimeout) for details. `5000` by default.
+* `"dumpLogs"`: Path of file for dumping all emited logs.
+* `"debugLogs"`: Path of file containing logs to ignore and not saved to the state.
 
 # IMPLEMENTED METHODS
 
