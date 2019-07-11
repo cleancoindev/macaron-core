@@ -1,6 +1,6 @@
 {
   "name": "macaron-core",
-  "version": "2.2.1-coverage",
+  "version": "2.2.2",
   "main": "./index.js",
   "engines": {
     "node": ">=8.9.0"
