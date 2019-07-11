@@ -1,6 +1,6 @@
 {
-  "name": "ganache-core",
-  "version": "2.2.1",
+  "name": "git@github.com:ripio/macaron-core.git-core",
+  "version": "2.2.1-coverage",
   "main": "./index.js",
   "engines": {
     "node": ">=8.9.0"
@@ -33,8 +33,8 @@
     "ethereumjs-account": "2.0.5",
     "ethereumjs-block": "1.2.2",
     "ethereumjs-tx": "1.3.4",
-    "ethereumjs-util": "5.2.0",
-    "ethereumjs-vm": "https://github.com/Agusx1211/ethereumjs-vm/releases/download/2.4.1/ethereumjs-vm-2-4-1.tar.gz",
+    "ethereumjs-util": "^5.2.0",
+    "ethereumjs-vm": "https://github.com/Agusx1211/ethereumjs-vm/releases/download/2.4.1/ethereumjs-vm-2.4.4-coverage.tar.gz",
     "heap": "0.2.6",
     "level-sublevel": "6.6.4",
     "levelup": "3.1.1",
@@ -76,7 +76,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/trufflesuite/ganache-core"
+    "url": "https://github.com/ripio/macaron-core"
   },
   "license": "MIT",
   "eslintConfig": {
